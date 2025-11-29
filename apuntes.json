@@ -1,0 +1,47 @@
+[
+  {
+    "category": "equipos",
+    "categoryDisplay": "Gestión Equipos",
+    "tagClass": "tag-management",
+    "asignatura": "-",
+    "title": "Versículos de un Scrum Master",
+    "date": "Jun 2025",
+    "file": "pdfs/equipos/agiles/Versículos de un Scrum Master.pdf"
+  },
+  {
+    "category": "equipos",
+    "categoryDisplay": "Metodologías Tradicionales",
+    "tagClass": "tag-management",
+    "asignatura": "IS1",
+    "title": "La Biblia de IS1",
+    "date": "Sept 2024",
+    "file": "pdfs/equipos/clasicas/La Biblia de IS1.pdf"
+  },
+  {
+    "category": "equipos",
+    "categoryDisplay": "Metodologías Tradicionales",
+    "tagClass": "tag-management",
+    "asignatura": "IS2",
+    "title": "La Biblia de IS2",
+    "date": "Jun 2025",
+    "file": "pdfs/equipos/clasicas/La Biblia de IS2.pdf"
+  },
+  {
+    "category": "equipos",
+    "categoryDisplay": "Gestión Equipos",
+    "tagClass": "tag-management",
+    "asignatura": "-",
+    "title": "La Biblia de Modelado de Software",
+    "date": "Nov 2025",
+    "file": "pdfs/equipos/clasicas/La Biblia de Modelado de Software.pdf"
+  },
+  {
+    "category": "equipos",
+    "categoryDisplay": "Metodologías Ágiles",
+    "tagClass": "tag-management",
+    "asignatura": "GPS",
+    "title": "versiculos de un SM",
+    "date": "Nov 2025",
+    "file": "pdfs/equipos/versiculos de un SM.pdf"
+  }
+]

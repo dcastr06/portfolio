@@ -1,0 +1,31 @@
+name: Update Notes
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'pdfs/**'
+
+jobs:
+  update-notes:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Update Script
+        run: node update_notes.js
+
+      - name: Commit and Push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-update apuntes.json [skip ci]"
+          file_pattern: apuntes.json

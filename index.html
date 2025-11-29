@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Castro | Portfolio</title>
+    <meta name="description"
+        content="Portfolio personal de David Castro. Estudiante interesado en Ciberseguridad, Normativa IT y Desarrollo.">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Dev<span class="accent">Portfolio</span>.</a>
+
+            <button class="mobile-menu-btn" aria-label="Abrir menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link">Inicio</a></li>
+                    <li><a href="#apuntes" class="nav-link">Apuntes</a></li>
+                    <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                    <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-content">
+                <h1 class="hero-title">Hola, soy <span class="text-gradient">David</span></h1>
+                <p class="hero-subtitle">Estudiante & Futuro Profesional en Ciberseguridad</p>
+                <p class="hero-description">
+                    Estudiante de Ingeniería apasionado por la seguridad informática, la protección de datos y el
+                    cumplimiento normativo (GDPR, ISO 27001).
+                    Aprendiendo cada día para construir un entorno digital más seguro.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
+                    <a href="#apuntes" class="btn btn-secondary">Mis Apuntes</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Apuntes Section -->
+        <section id="apuntes" class="section">
+            <div class="container">
+                <h2 class="section-title">Mis Apuntes <span class="accent">Open Source</span></h2>
+                <p class="section-desc">Comparto mis notas de clase para ayudar a otros estudiantes. El conocimiento
+                    crece cuando se comparte.</p>
+
+                <div class="tabs-container">
+                    <div class="container">
+                        <h2 class="section-title">Proyectos Destacados</h2>
+                        <div class="projects-grid">
+                            <!-- Project Card 1 -->
+                            <article class="project-card">
+                                <div class="card-content">
+                                    <h3 class="card-title">Security Audit Dashboard</h3>
+                                    <p class="card-desc">Concepto de dashboard para visualizar vulnerabilidades y estado
+                                        de
+                                        cumplimiento de servidores.</p>
+                                    <div class="card-tags">
+                                        <span class="tech-tag">Python</span>
+                                        <span class="tech-tag">Flask</span>
+                                        <span class="tech-tag">Chart.js</span>
+                                    </div>
+                                    <a href="#" class="card-link">Ver en GitHub →</a>
+                                </div>
+                            </article>
+
+                            <!-- Project Card 2 -->
+                            <article class="project-card">
+                                <div class="card-content">
+                                    <h3 class="card-title">Compliance Checklist App</h3>
+                                    <p class="card-desc">Herramienta para seguimiento de requisitos de la norma ISO
+                                        27001 y
+                                        GDPR.</p>
+                                    <div class="card-tags">
+                                        <span class="tech-tag">JavaScript</span>
+                                        <span class="tech-tag">LocalStorage</span>
+                                        <span class="tech-tag">GDPR</span>
+                                    </div>
+                                    <a href="#" class="card-link">Ver en GitHub →</a>
+                                </div>
+                            </article>
+
+                            <!-- Project Card 3 -->
+                            <article class="project-card">
+                                <div class="card-content">
+                                    <h3 class="card-title">Network Packet Analyzer</h3>
+                                    <p class="card-desc">Script académico para análisis básico de tráfico de red y
+                                        detección de
+                                        anomalías.</p>
+                                    <div class="card-tags">
+                                        <span class="tech-tag">Python</span>
+                                        <span class="tech-tag">Scapy</span>
+                                        <span class="tech-tag">Networking</span>
+                                    </div>
+                                    <a href="#" class="card-link">Ver en GitHub →</a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+        </section>
+
+        <!-- Sobre Mí / CV Section -->
+        <section id="sobre-mi" class="section">
+            <div class="container about-container">
+                <div class="about-content">
+                    <h2 class="section-title">Sobre Mí</h2>
+                    <p class="about-text">
+                        Soy David Castro, estudiante de Ingeniería con un profundo interés en el mundo de la
+                        Ciberseguridad y la Normativa Informática.
+                        Me fascina entender cómo proteger los sistemas y asegurar el cumplimiento legal de las
+                        tecnologías.
+                        Actualmente estoy formándome en hacking ético, análisis forense y estándares como ISO 27001.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">GitHub</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                    <a href="#" class="btn btn-primary btn-large">Descargar CV (PDF)</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2024 David Castro. Todos los derechos reservados.</p>
+            <p>Hecho con 💙 y código limpio.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
