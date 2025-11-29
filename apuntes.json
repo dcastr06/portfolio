@@ -1,21 +1,21 @@
 [
   {
     "category": "equipos",
-    "categoryDisplay": "Gestión Equipos",
+    "categoryDisplay": "Metodologías Ágiles",
     "tagClass": "tag-management",
-    "asignatura": "-",
+    "asignatura": "GPS",
     "title": "Versículos de un Scrum Master",
-    "date": "Nov 2025",
+    "date": "Jun 2025",
     "file": "pdfs/equipos/agiles/Versículos de un Scrum Master.pdf"
   },
   {
     "category": "equipos",
     "categoryDisplay": "Metodologías Tradicionales",
     "tagClass": "tag-management",
-    "asignatura": "IS1",
-    "title": "La Biblia de IS1",
+    "asignatura": "MS",
+    "title": "La Biblia de Modelado de Software",
     "date": "Nov 2025",
-    "file": "pdfs/equipos/clasicas/La Biblia de IS1.pdf"
+    "file": "pdfs/equipos/tradicionales/La Biblia de Modelado de Software.pdf"
   },
   {
     "category": "equipos",
@@ -23,16 +23,16 @@
     "tagClass": "tag-management",
     "asignatura": "IS2",
     "title": "La Biblia de IS2",
-    "date": "Nov 2025",
-    "file": "pdfs/equipos/clasicas/La Biblia de IS2.pdf"
+    "date": "Jun 2025",
+    "file": "pdfs/equipos/tradicionales/La Biblia de IS2.pdf"
   },
   {
     "category": "equipos",
-    "categoryDisplay": "Gestión Equipos",
+    "categoryDisplay": "Metodologías Tradicionales",
     "tagClass": "tag-management",
-    "asignatura": "-",
-    "title": "La Biblia de Modelado de Software",
-    "date": "Nov 2025",
-    "file": "pdfs/equipos/clasicas/La Biblia de Modelado de Software.pdf"
+    "asignatura": "IS1",
+    "title": "La Biblia de IS1",
+    "date": "Sept 2024",
+    "file": "pdfs/equipos/tradicionales/La Biblia de IS1.pdf"
   }
 ]

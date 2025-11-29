@@ -62,19 +62,23 @@ for (const [dirName, meta] of Object.entries(categories)) {
                 // Specific Mapping Logic for 'equipos'
                 if (dirName === 'equipos') {
                     const lowerName = filename.toLowerCase();
+                    // Check subfolders based on file path
+                    const isInAgiles = filePath.toLowerCase().includes(path.join('equipos', 'agiles'));
+                    const isInTradicionales = filePath.toLowerCase().includes(path.join('equipos', 'tradicionales'));
 
-                    if (lowerName.includes('versiculos de un sm')) {
-                        asignatura = 'GPS';
+                    if (isInAgiles) {
                         categoryDisplay = 'Metodologías Ágiles';
-                    } else if (lowerName.includes('la biblia de ms')) {
-                        asignatura = 'MS';
+                        asignatura = 'GPS';
+                    } else if (isInTradicionales) {
                         categoryDisplay = 'Metodologías Tradicionales';
-                    } else if (lowerName.includes('la biblia de is1')) {
-                        asignatura = 'IS1';
-                        categoryDisplay = 'Metodologías Tradicionales';
-                    } else if (lowerName.includes('la biblia de is2')) {
-                        asignatura = 'IS2';
-                        categoryDisplay = 'Metodologías Tradicionales';
+
+                        if (lowerName.includes('la biblia de modelado de software')) {
+                            asignatura = 'MS';
+                        } else if (lowerName.includes('la biblia de is1')) {
+                            asignatura = 'IS1';
+                        } else if (lowerName.includes('la biblia de is2')) {
+                            asignatura = 'IS2';
+                        }
                     }
                 }
 
@@ -95,8 +99,27 @@ for (const [dirName, meta] of Object.entries(categories)) {
     }
 }
 
-// Sort by date (newest first)
-notes.sort((a, b) => 0);
+// Custom Sort Order
+const sortOrder = ['GPS', 'MS', 'IS2', 'IS1'];
+
+notes.sort((a, b) => {
+    const indexA = sortOrder.indexOf(a.asignatura);
+    const indexB = sortOrder.indexOf(b.asignatura);
+
+    // If both are in the list, sort by index (lower index comes first)
+    if (indexA !== -1 && indexB !== -1) {
+        return indexA - indexB;
+    }
+
+    // If only A is in the list, it comes first
+    if (indexA !== -1) return -1;
+
+    // If only B is in the list, it comes first
+    if (indexB !== -1) return 1;
+
+    // If neither is in the list, sort by date (newest first) or title
+    return 0;
+});
 
 fs.writeFileSync(outputFile, JSON.stringify(notes, null, 2));
 console.log(`Successfully generated apuntes.json with ${notes.length} notes.`);

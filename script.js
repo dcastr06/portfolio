@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
             : allNotes.filter(note => note.category === filterCategory);
 
         if (filteredNotes.length === 0) {
-            notesBody.innerHTML = '<tr><td colspan="4" style="text-align:center; color: var(--text-muted);">No hay apuntes en esta categoría.</td></tr>';
+            notesBody.innerHTML = '<tr><td colspan="5" style="text-align:center; color: var(--text-muted);">No hay apuntes en esta categoría.</td></tr>';
             return;
         }
 
@@ -90,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             row.innerHTML = `
                 <td><span class="tag ${note.tagClass}">${note.categoryDisplay}</span></td>
+                <td>${note.asignatura}</td>
                 <td>${note.title}</td>
                 <td>${note.date}</td>
                 <td><a href="${note.file}" class="btn-icon" aria-label="Descargar PDF" download>⬇ PDF</a></td>
