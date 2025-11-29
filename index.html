@@ -48,7 +48,7 @@
                 <p class="hero-subtitle">Estudiante & Futuro Profesional en Ciberseguridad</p>
                 <p class="hero-description">
                     Estudiante de Ingeniería apasionado por la seguridad informática, la protección de datos y el
-                    cumplimiento normativo (GDPR, ISO 27001).
+                    cumplimiento normativo (GDPR).
                     Aprendiendo cada día para construir un entorno digital más seguro.
                 </p>
                 <div class="hero-buttons">
@@ -66,58 +66,84 @@
                     crece cuando se comparte.</p>
 
                 <div class="tabs-container">
-                    <div class="container">
-                        <h2 class="section-title">Proyectos Destacados</h2>
-                        <div class="projects-grid">
-                            <!-- Project Card 1 -->
-                            <article class="project-card">
-                                <div class="card-content">
-                                    <h3 class="card-title">Security Audit Dashboard</h3>
-                                    <p class="card-desc">Concepto de dashboard para visualizar vulnerabilidades y estado
-                                        de
-                                        cumplimiento de servidores.</p>
-                                    <div class="card-tags">
-                                        <span class="tech-tag">Python</span>
-                                        <span class="tech-tag">Flask</span>
-                                        <span class="tech-tag">Chart.js</span>
-                                    </div>
-                                    <a href="#" class="card-link">Ver en GitHub →</a>
-                                </div>
-                            </article>
+                    <button class="tab-btn active" data-tab="all">Todos</button>
+                    <button class="tab-btn" data-tab="algoritmos">Algoritmos</button>
+                    <button class="tab-btn" data-tab="equipos">Gestión de Equipos</button>
+                    <button class="tab-btn" data-tab="empresas">Gestión de Empresas</button>
+                </div>
 
-                            <!-- Project Card 2 -->
-                            <article class="project-card">
-                                <div class="card-content">
-                                    <h3 class="card-title">Compliance Checklist App</h3>
-                                    <p class="card-desc">Herramienta para seguimiento de requisitos de la norma ISO
-                                        27001 y
-                                        GDPR.</p>
-                                    <div class="card-tags">
-                                        <span class="tech-tag">JavaScript</span>
-                                        <span class="tech-tag">LocalStorage</span>
-                                        <span class="tech-tag">GDPR</span>
-                                    </div>
-                                    <a href="#" class="card-link">Ver en GitHub →</a>
-                                </div>
-                            </article>
+                <div class="notes-table-wrapper">
+                    <table class="notes-table">
+                        <thead>
+                            <tr>
+                                <th>Categoría</th>
+                                <th>Tema</th>
+                                <th>Fecha</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="notes-body">
+                            <!-- Content loaded dynamically via script.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
 
-                            <!-- Project Card 3 -->
-                            <article class="project-card">
-                                <div class="card-content">
-                                    <h3 class="card-title">Network Packet Analyzer</h3>
-                                    <p class="card-desc">Script académico para análisis básico de tráfico de red y
-                                        detección de
-                                        anomalías.</p>
-                                    <div class="card-tags">
-                                        <span class="tech-tag">Python</span>
-                                        <span class="tech-tag">Scapy</span>
-                                        <span class="tech-tag">Networking</span>
-                                    </div>
-                                    <a href="#" class="card-link">Ver en GitHub →</a>
-                                </div>
-                            </article>
+        <!-- Proyectos Section -->
+        <section id="proyectos" class="section bg-alt">
+            <div class="container">
+                <h2 class="section-title">Proyectos Destacados</h2>
+                <div class="projects-grid">
+                    <!-- Project Card 1 -->
+                    <article class="project-card">
+                        <div class="card-content">
+                            <h3 class="card-title">Security Audit Dashboard</h3>
+                            <p class="card-desc">Concepto de dashboard para visualizar vulnerabilidades y estado
+                                de
+                                cumplimiento de servidores.</p>
+                            <div class="card-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">Chart.js</span>
+                            </div>
+                            <a href="#" class="card-link">Ver en GitHub →</a>
                         </div>
-                    </div>
+                    </article>
+
+                    <!-- Project Card 2 -->
+                    <article class="project-card">
+                        <div class="card-content">
+                            <h3 class="card-title">Compliance Checklist App</h3>
+                            <p class="card-desc">Herramienta para seguimiento de requisitos de la norma ISO
+                                27001 y
+                                GDPR.</p>
+                            <div class="card-tags">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">LocalStorage</span>
+                                <span class="tech-tag">GDPR</span>
+                            </div>
+                            <a href="#" class="card-link">Ver en GitHub →</a>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 3 -->
+                    <article class="project-card">
+                        <div class="card-content">
+                            <h3 class="card-title">Network Packet Analyzer</h3>
+                            <p class="card-desc">Script académico para análisis básico de tráfico de red y
+                                detección de
+                                anomalías.</p>
+                            <div class="card-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Scapy</span>
+                                <span class="tech-tag">Networking</span>
+                            </div>
+                            <a href="#" class="card-link">Ver en GitHub →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
         </section>
 
         <!-- Sobre Mí / CV Section -->

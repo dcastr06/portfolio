@@ -90,7 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             row.innerHTML = `
                 <td><span class="tag ${note.tagClass}">${note.categoryDisplay}</span></td>
-                <td>${note.asignatura}</td>
                 <td>${note.title}</td>
                 <td>${note.date}</td>
                 <td><a href="${note.file}" class="btn-icon" aria-label="Descargar PDF" download>⬇ PDF</a></td>
