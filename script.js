@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
     }
 
-    mobileBtn.addEventListener('click', toggleMenu);
+    if (mobileBtn) {
+        mobileBtn.addEventListener('click', toggleMenu);
+    }
 
     // Close menu when clicking a link
     navLinks.forEach(link => {
@@ -52,6 +54,41 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Load Projects (Dynamic)
+    fetch('proyectos.json')
+        .then(response => response.json())
+        .then(projects => {
+            const projectsContainer = document.getElementById('projects-container');
+            if (!projectsContainer) return;
+
+            projects.forEach(project => {
+                const card = document.createElement('article');
+                card.className = 'project-card';
+
+                // Create tags HTML
+                const tagsHtml = project.tags.map(tag => `<span class="tech-tag">${tag}</span>`).join('');
+
+                // Determine link text and icon
+                let linkText = 'Ver en GitHub';
+                if (project.link.includes('wikipedia.org')) {
+                    linkText = 'Ver en Wikipedia';
+                }
+
+                card.innerHTML = `
+                    <div class="card-content">
+                        <h3 class="card-title">${project.title}</h3>
+                        <p class="card-desc">${project.description}</p>
+                        <div class="card-tags">
+                            ${tagsHtml}
+                        </div>
+                        <a href="${project.link}" class="card-link" target="_blank">${linkText} →</a>
+                    </div>
+                `;
+                projectsContainer.appendChild(card);
+            });
+        })
+        .catch(error => console.error('Error loading projects:', error));
+
     // Apuntes Logic (Dynamic Loading & Filtering)
     const tabBtns = document.querySelectorAll('.tab-btn');
     const notesBody = document.getElementById('notes-body');
@@ -67,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => {
             console.error('Error loading notes:', error);
             if (notesBody) {
-                notesBody.innerHTML = '<tr><td colspan="4" style="text-align:center;">Error cargando apuntes.</td></tr>';
+                notesBody.innerHTML = '<tr><td colspan="6" style="text-align:center;">Error cargando apuntes.</td></tr>';
             }
         });
 
@@ -80,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
             : allNotes.filter(note => note.category === filterCategory);
 
         if (filteredNotes.length === 0) {
-            notesBody.innerHTML = '<tr><td colspan="5" style="text-align:center; color: var(--text-muted);">No hay apuntes en esta categoría.</td></tr>';
+            notesBody.innerHTML = '<tr><td colspan="6" style="text-align:center; color: var(--text-muted);">No hay apuntes en esta categoría.</td></tr>';
             return;
         }
 
@@ -88,12 +125,25 @@ document.addEventListener('DOMContentLoaded', () => {
             const row = document.createElement('tr');
             row.setAttribute('data-category', note.category);
 
+            let actionIcon = '⬇ PDF';
+            let targetAttr = '';
+            let downloadAttr = 'download';
+
+            if (note.extension === 'ZIP') {
+                actionIcon = '📦 ZIP';
+            } else if (note.extension === 'LINK') {
+                actionIcon = '🔗 GitHub';
+                targetAttr = 'target="_blank" rel="noopener noreferrer"';
+                downloadAttr = ''; // No download for links
+            }
+
             row.innerHTML = `
                 <td><span class="tag ${note.tagClass}">${note.categoryDisplay}</span></td>
                 <td>${note.asignatura}</td>
                 <td>${note.title}</td>
+                <td><span class="badge-type">${note.type}</span></td>
                 <td>${note.date}</td>
-                <td><a href="${note.file}" class="btn-icon" aria-label="Descargar PDF" download>⬇ PDF</a></td>
+                <td><a href="${note.file}" class="btn-icon" aria-label="Abrir ${note.extension}" ${targetAttr} ${downloadAttr}>${actionIcon}</a></td>
             `;
 
             // Animation

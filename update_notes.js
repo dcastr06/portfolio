@@ -41,9 +41,11 @@ for (const [dirName, meta] of Object.entries(categories)) {
         const allFiles = getFilesRecursively(categoryPath);
 
         allFiles.forEach(filePath => {
-            if (filePath.toLowerCase().endsWith('.pdf')) {
+            const lowerPath = filePath.toLowerCase();
+            if (lowerPath.endsWith('.pdf') || lowerPath.endsWith('.zip') || lowerPath.endsWith('.txt')) {
                 const stats = fs.statSync(filePath);
                 const filename = path.basename(filePath);
+                const ext = path.extname(filename);
 
                 // Format date (Month Year)
                 const date = new Date(stats.mtime);
@@ -52,19 +54,60 @@ for (const [dirName, meta] of Object.entries(categories)) {
                 const formattedDate = `${month.charAt(0).toUpperCase() + month.slice(1)} ${year}`;
 
                 // Clean filename for title
-                const title = filename.replace('.pdf', '').replace(/[-_]/g, ' ');
+                const title = filename.replace(ext, '').replace(/[-_]/g, ' ');
 
                 // Default Metadata
                 let asignatura = '-';
                 let categoryDisplay = meta.tag;
                 let tagClass = meta.class;
+                let type = 'Apuntes'; // Default type
+                let fileUrl = path.relative(__dirname, filePath).replace(/\\/g, '/');
+                let extensionDisplay = ext.replace('.', '').toUpperCase();
+
+                // Handle .txt files as Links
+                if (lowerPath.endsWith('.txt')) {
+                    try {
+                        // Read the first line of the file as the URL
+                        const content = fs.readFileSync(filePath, 'utf-8');
+                        let url = content.split('\n')[0].trim();
+                        // Remove trailing dot if present (common copy-paste error)
+                        if (url.endsWith('.')) {
+                            url = url.slice(0, -1);
+                        }
+
+                        if (url.startsWith('http')) {
+                            fileUrl = url;
+                            extensionDisplay = 'LINK';
+                        }
+                    } catch (err) {
+                        console.error(`Error reading link file ${filename}:`, err);
+                    }
+                }
+
+                // Determine Type based on folder
+                if (dirName === 'empresas' || dirName === 'algoritmos') {
+                    type = 'Ejercicios';
+                }
+
+                // Specific Mapping Logic for 'empresas'
+                if (dirName === 'empresas') {
+                    if (lowerPath.includes(path.join('empresas', 'tcge'))) {
+                        asignatura = 'TCGE';
+                    }
+                }
+
+                // Specific Mapping Logic for 'algoritmos'
+                if (dirName === 'algoritmos') {
+                    if (lowerPath.includes(path.join('algoritmos', 'fal'))) {
+                        asignatura = 'FAL';
+                    }
+                }
 
                 // Specific Mapping Logic for 'equipos'
                 if (dirName === 'equipos') {
-                    const lowerName = filename.toLowerCase();
                     // Check subfolders based on file path
-                    const isInAgiles = filePath.toLowerCase().includes(path.join('equipos', 'agiles'));
-                    const isInTradicionales = filePath.toLowerCase().includes(path.join('equipos', 'tradicionales'));
+                    const isInAgiles = lowerPath.includes(path.join('equipos', 'agiles'));
+                    const isInTradicionales = lowerPath.includes(path.join('equipos', 'tradicionales'));
 
                     if (isInAgiles) {
                         categoryDisplay = 'Metodologías Ágiles';
@@ -72,18 +115,15 @@ for (const [dirName, meta] of Object.entries(categories)) {
                     } else if (isInTradicionales) {
                         categoryDisplay = 'Metodologías Tradicionales';
 
-                        if (lowerName.includes('la biblia de modelado de software')) {
+                        if (lowerPath.includes('la biblia de modelado de software')) {
                             asignatura = 'MS';
-                        } else if (lowerName.includes('la biblia de is1')) {
+                        } else if (lowerPath.includes('la biblia de is1')) {
                             asignatura = 'IS1';
-                        } else if (lowerName.includes('la biblia de is2')) {
+                        } else if (lowerPath.includes('la biblia de is2')) {
                             asignatura = 'IS2';
                         }
                     }
                 }
-
-                // Relative path for web
-                const relativePath = path.relative(__dirname, filePath).replace(/\\/g, '/');
 
                 notes.push({
                     category: dirName,
@@ -91,8 +131,10 @@ for (const [dirName, meta] of Object.entries(categories)) {
                     tagClass: tagClass,
                     asignatura: asignatura,
                     title: title,
+                    type: type,
                     date: formattedDate,
-                    file: relativePath
+                    file: fileUrl,
+                    extension: extensionDisplay
                 });
             }
         });

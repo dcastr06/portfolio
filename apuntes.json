@@ -5,8 +5,10 @@
     "tagClass": "tag-management",
     "asignatura": "GPS",
     "title": "Versículos de un Scrum Master",
-    "date": "Nov 2025",
-    "file": "pdfs/equipos/agiles/Versículos de un Scrum Master.pdf"
+    "type": "Apuntes",
+    "date": "Jun 2025",
+    "file": "pdfs/equipos/agiles/Versículos de un Scrum Master.pdf",
+    "extension": "PDF"
   },
   {
     "category": "equipos",
@@ -14,8 +16,10 @@
     "tagClass": "tag-management",
     "asignatura": "MS",
     "title": "La Biblia de Modelado de Software",
+    "type": "Apuntes",
     "date": "Nov 2025",
-    "file": "pdfs/equipos/tradicionales/La Biblia de Modelado de Software.pdf"
+    "file": "pdfs/equipos/tradicionales/La Biblia de Modelado de Software.pdf",
+    "extension": "PDF"
   },
   {
     "category": "equipos",
@@ -23,8 +27,10 @@
     "tagClass": "tag-management",
     "asignatura": "IS2",
     "title": "La Biblia de IS2",
-    "date": "Nov 2025",
-    "file": "pdfs/equipos/tradicionales/La Biblia de IS2.pdf"
+    "type": "Apuntes",
+    "date": "Jun 2025",
+    "file": "pdfs/equipos/tradicionales/La Biblia de IS2.pdf",
+    "extension": "PDF"
   },
   {
     "category": "equipos",
@@ -32,7 +38,42 @@
     "tagClass": "tag-management",
     "asignatura": "IS1",
     "title": "La Biblia de IS1",
+    "type": "Apuntes",
+    "date": "Sept 2024",
+    "file": "pdfs/equipos/tradicionales/La Biblia de IS1.pdf",
+    "extension": "PDF"
+  },
+  {
+    "category": "algoritmos",
+    "categoryDisplay": "Algoritmos",
+    "tagClass": "tag-code",
+    "asignatura": "FAL",
+    "title": "Repositorio FAL",
+    "type": "Ejercicios",
     "date": "Nov 2025",
-    "file": "pdfs/equipos/tradicionales/La Biblia de IS1.pdf"
+    "file": "https://github.com/dcastr06/FAL-2024",
+    "extension": "LINK"
+  },
+  {
+    "category": "empresas",
+    "categoryDisplay": "Empresas",
+    "tagClass": "tag-business",
+    "asignatura": "TCGE",
+    "title": "CFijos",
+    "type": "Ejercicios",
+    "date": "Nov 2025",
+    "file": "pdfs/empresas/TCGE/Fijos/CFijos.zip",
+    "extension": "ZIP"
+  },
+  {
+    "category": "empresas",
+    "categoryDisplay": "Empresas",
+    "tagClass": "tag-business",
+    "asignatura": "TCGE",
+    "title": "CVars",
+    "type": "Ejercicios",
+    "date": "Nov 2025",
+    "file": "pdfs/empresas/TCGE/Variables/CVars.zip",
+    "extension": "ZIP"
   }
 ]

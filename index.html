@@ -21,7 +21,7 @@
     <!-- Navigation -->
     <header class="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo">Dev<span class="accent">Portfolio</span>.</a>
+            <a href="#" class="logo">David<span class="accent">Castro</span>.</a>
 
             <button class="mobile-menu-btn" aria-label="Abrir menú">
                 <span class="bar"></span>
@@ -44,12 +44,14 @@
         <!-- Hero Section -->
         <section id="hero" class="hero-section">
             <div class="container hero-content">
-                <h1 class="hero-title">Hola, soy <span class="text-gradient">David</span></h1>
-                <p class="hero-subtitle">Estudiante & Futuro Profesional en Ciberseguridad</p>
+                <h1 class="hero-title">¡Hola!, soy <span class="text-gradient">David</span></h1>
+                <p class="hero-subtitle">Estudiante de Ingeniería del Software & apasionado de la Ciberseguridad</p>
                 <p class="hero-description">
                     Estudiante de Ingeniería apasionado por la seguridad informática, la protección de datos y el
-                    cumplimiento normativo (GDPR).
-                    Aprendiendo cada día para construir un entorno digital más seguro.
+                    cumplimiento normativo (RGPD).
+                    <br>
+                    <br>
+                    Aprendiendo cada día para construir un entorno digital más seguro y justo para todos.
                 </p>
                 <div class="hero-buttons">
                     <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
@@ -79,6 +81,7 @@
                                 <th>Categoría</th>
                                 <th>Asignatura</th>
                                 <th>Título</th>
+                                <th>Tipo</th>
                                 <th>Fecha</th>
                                 <th>Acción</th>
                             </tr>
@@ -90,59 +93,12 @@
                 </div>
             </div>
         </section>
-
         <!-- Proyectos Section -->
         <section id="proyectos" class="section bg-alt">
             <div class="container">
                 <h2 class="section-title">Proyectos Destacados</h2>
-                <div class="projects-grid">
-                    <!-- Project Card 1 -->
-                    <article class="project-card">
-                        <div class="card-content">
-                            <h3 class="card-title">Security Audit Dashboard</h3>
-                            <p class="card-desc">Concepto de dashboard para visualizar vulnerabilidades y estado
-                                de
-                                cumplimiento de servidores.</p>
-                            <div class="card-tags">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">Flask</span>
-                                <span class="tech-tag">Chart.js</span>
-                            </div>
-                            <a href="#" class="card-link">Ver en GitHub →</a>
-                        </div>
-                    </article>
-
-                    <!-- Project Card 2 -->
-                    <article class="project-card">
-                        <div class="card-content">
-                            <h3 class="card-title">Compliance Checklist App</h3>
-                            <p class="card-desc">Herramienta para seguimiento de requisitos de la norma ISO
-                                27001 y
-                                GDPR.</p>
-                            <div class="card-tags">
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">LocalStorage</span>
-                                <span class="tech-tag">GDPR</span>
-                            </div>
-                            <a href="#" class="card-link">Ver en GitHub →</a>
-                        </div>
-                    </article>
-
-                    <!-- Project Card 3 -->
-                    <article class="project-card">
-                        <div class="card-content">
-                            <h3 class="card-title">Network Packet Analyzer</h3>
-                            <p class="card-desc">Script académico para análisis básico de tráfico de red y
-                                detección de
-                                anomalías.</p>
-                            <div class="card-tags">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">Scapy</span>
-                                <span class="tech-tag">Networking</span>
-                            </div>
-                            <a href="#" class="card-link">Ver en GitHub →</a>
-                        </div>
-                    </article>
+                <div class="projects-grid" id="projects-container">
+                    <!-- Projects will be loaded dynamically -->
                 </div>
             </div>
         </section>
@@ -153,16 +109,23 @@
                 <div class="about-content">
                     <h2 class="section-title">Sobre Mí</h2>
                     <p class="about-text">
-                        Soy David Castro, estudiante de Ingeniería con un profundo interés en el mundo de la
-                        Ciberseguridad y la Normativa Informática.
+                        Soy David Castro, estudiante de Ingeniería del Software en la UCM con un profundo interés en el
+                        mundo de la Ciberseguridad, tanto defensiva como ofensiva y la Normativa Informática.
+                        <br><br>
                         Me fascina entender cómo proteger los sistemas y asegurar el cumplimiento legal de las
-                        tecnologías.
-                        Actualmente estoy formándome en hacking ético, análisis forense y estándares como ISO 27001.
+                        tecnologías para poder tener un entorno digital más seguro.
+                        <br><br>
+                        Tengo conocimientos de ética y profesión, así como reglamentación como el RGPD, NIS2, ENS,
+                        LOGPDD o LPI entre otras. En cuanto a ciberseguridad, actualmente estoy realizando un TFG de
+                        análisis y manipulación de malware en entornos
+                        Serverless.
+                        <br><br>
+                        Para una mayor información, puedes visitar mi LinkedIn o mi GitHub.
                     </p>
                     <div class="social-links">
-                        <a href="#" class="social-link">LinkedIn</a>
-                        <a href="#" class="social-link">GitHub</a>
-                        <a href="#" class="social-link">Twitter</a>
+                        <a href="https://www.linkedin.com/in/david-castro-garc%C3%ADa-842158306/" class="social-link"
+                            target="_blank">LinkedIn</a>
+                        <a href="https://github.com/dcastr06" class="social-link" target="_blank">GitHub</a>
                     </div>
                     <a href="#" class="btn btn-primary btn-large">Descargar CV (PDF)</a>
                 </div>
@@ -173,7 +136,6 @@
     <footer class="footer">
         <div class="container footer-content">
             <p>&copy; 2024 David Castro. Todos los derechos reservados.</p>
-            <p>Hecho con 💙 y código limpio.</p>
         </div>
     </footer>
 

@@ -1,0 +1,24 @@
+[
+    {
+        "title": "Sostenibilidad Digital",
+        "description": "Contribución a la Wikipedia traduciendo el artículo de Sostenibilidad Digital al español. El artículo expresa la importancia de que los recursos digitales generados hoy puedan seguir siendo útiles, accesibles y mejorables en el futuro.",
+        "tags": [
+            "Wikipedia",
+            "Sostenibilidad Digital",
+            "Ética",
+            "Comunidad"
+        ],
+        "link": "https://es.wikipedia.org/wiki/Sostenibilidad_digital"
+    },
+    {
+        "title": "Taskmaster",
+        "description": "Aplicación para la asignatura de GPS que permite aprender dicha asignatura de manera amena con distintos tipo de actividades. Mi papel en el proyecto fue el de Scrum Master. El proyecto se desarrolló en equipo y ganamos el premio a mejor producto de la clase.",
+        "tags": [
+            "Scrum",
+            "Agile",
+            "Java",
+            "Gestión de Proyectos"
+        ],
+        "link": "https://github.com/t3sorero/TASKMASTER"
+    }
+]

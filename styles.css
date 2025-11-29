@@ -97,36 +97,64 @@ img {
     margin: 0 auto 3rem auto;
 }
 
-*/ .btn {
+/* 
+ * Buttons 
+ */
+.btn {
     display: inline-block;
-    padding: 12px 28px;
+    padding: 14px 32px;
     border-radius: 50px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    letter-spacing: 0.5px;
 }
 
 .btn-primary {
-    background-color: var(--accent-primary);
-    color: var(--bg-body);
-    box-shadow: 0 4px 15px var(--accent-glow);
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px var(--accent-glow);
-    filter: brightness(1.1);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(56, 189, 248, 0.6);
+}
+
+.btn-primary:hover::before {
+    opacity: 1;
 }
 
 .btn-secondary {
     background-color: transparent;
     border: 2px solid var(--accent-primary);
     color: var(--accent-primary);
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.1);
 }
 
 .btn-secondary:hover {
     background-color: rgba(56, 189, 248, 0.1);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+    color: #fff;
+    border-color: var(--accent-secondary);
 }
 
 .btn-large {
@@ -462,13 +490,24 @@ img {
 }
 
 .social-link {
-    color: var(--text-main);
-    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px;
+    border-radius: 30px;
+    background-color: rgba(30, 41, 59, 0.5);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
     font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 .social-link:hover {
+    border-color: var(--accent-primary);
     color: var(--accent-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.15);
+    background-color: rgba(56, 189, 248, 0.05);
 }
 
 .footer {
