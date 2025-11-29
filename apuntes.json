@@ -6,7 +6,7 @@
     "asignatura": "GPS",
     "title": "Versículos de un Scrum Master",
     "type": "Apuntes",
-    "date": "Jun 2025",
+    "date": "Nov 2025",
     "file": "pdfs/equipos/agiles/Versículos de un Scrum Master.pdf",
     "extension": "PDF"
   },
@@ -28,7 +28,7 @@
     "asignatura": "IS2",
     "title": "La Biblia de IS2",
     "type": "Apuntes",
-    "date": "Jun 2025",
+    "date": "Nov 2025",
     "file": "pdfs/equipos/tradicionales/La Biblia de IS2.pdf",
     "extension": "PDF"
   },
@@ -39,9 +39,20 @@
     "asignatura": "IS1",
     "title": "La Biblia de IS1",
     "type": "Apuntes",
-    "date": "Sept 2024",
+    "date": "Nov 2025",
     "file": "pdfs/equipos/tradicionales/La Biblia de IS1.pdf",
     "extension": "PDF"
+  },
+  {
+    "category": "algoritmos",
+    "categoryDisplay": "Algoritmos",
+    "tagClass": "tag-code",
+    "asignatura": "FAL",
+    "title": "Repositorio Algoritmos",
+    "type": "Ejercicios",
+    "date": "Nov 2025",
+    "file": "https://github.com/dcastr06/FAL-2024",
+    "extension": "LINK"
   },
   {
     "category": "algoritmos",
