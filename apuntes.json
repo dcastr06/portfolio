@@ -54,6 +54,17 @@
     "categoryDisplay": "Algoritmos",
     "tagClass": "tag-code",
     "asignatura": "FAL",
+    "title": "Repositorio Algoritmos",
+    "type": "Ejercicios",
+    "date": "Mar 2026",
+    "file": "https://github.com/dcastr06/FAL-2024",
+    "extension": "LINK"
+  },
+  {
+    "category": "algoritmos",
+    "categoryDisplay": "Algoritmos",
+    "tagClass": "tag-code",
+    "asignatura": "FAL",
     "title": "Repositorio FAL",
     "type": "Ejercicios",
     "file": "https://github.com/dcastr06/FAL-2024",
