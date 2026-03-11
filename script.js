@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => {
             console.error('Error loading notes:', error);
             if (notesBody) {
-                notesBody.innerHTML = '<tr><td colspan="6" style="text-align:center;">Error cargando apuntes.</td></tr>';
+                notesBody.innerHTML = '<tr><td colspan="5" style="text-align:center;">Error cargando apuntes.</td></tr>';
             }
         });
 
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
             : allNotes.filter(note => note.category === filterCategory);
 
         if (filteredNotes.length === 0) {
-            notesBody.innerHTML = '<tr><td colspan="6" style="text-align:center; color: var(--text-muted);">No hay apuntes en esta categoría.</td></tr>';
+            notesBody.innerHTML = '<tr><td colspan="5" style="text-align:center; color: var(--text-muted);">No hay apuntes en esta categoría.</td></tr>';
             return;
         }
 
@@ -142,7 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>${note.asignatura}</td>
                 <td>${note.title}</td>
                 <td><span class="badge-type">${note.type}</span></td>
-                <td>${note.date}</td>
                 <td><a href="${note.file}" class="btn-icon" aria-label="Abrir ${note.extension}" ${targetAttr} ${downloadAttr}>${actionIcon}</a></td>
             `;
 

@@ -43,15 +43,9 @@ for (const [dirName, meta] of Object.entries(categories)) {
         allFiles.forEach(filePath => {
             const lowerPath = filePath.toLowerCase();
             if (lowerPath.endsWith('.pdf') || lowerPath.endsWith('.zip') || lowerPath.endsWith('.txt')) {
-                const stats = fs.statSync(filePath);
                 const filename = path.basename(filePath);
                 const ext = path.extname(filename);
 
-                // Format date (Month Year)
-                const date = new Date(stats.mtime);
-                const month = date.toLocaleString('es-ES', { month: 'short' });
-                const year = date.getFullYear();
-                const formattedDate = `${month.charAt(0).toUpperCase() + month.slice(1)} ${year}`;
 
                 // Clean filename for title
                 const title = filename.replace(ext, '').replace(/[-_]/g, ' ');
@@ -132,7 +126,6 @@ for (const [dirName, meta] of Object.entries(categories)) {
                     asignatura: asignatura,
                     title: title,
                     type: type,
-                    date: formattedDate,
                     file: fileUrl,
                     extension: extensionDisplay
                 });
