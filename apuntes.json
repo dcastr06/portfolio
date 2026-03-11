@@ -1,5 +1,16 @@
 [
   {
+    "category": "algoritmos",
+    "categoryDisplay": "Algoritmos",
+    "tagClass": "tag-code",
+    "asignatura": "TAIS",
+    "title": "Repositorio TAIS",
+    "type": "Ejercicios",
+    "date": "Marzo 2026",
+    "file": "https://github.com/dcastr06/TAIS-2025-",
+    "extension": "LINK"
+  },
+  {
     "category": "equipos",
     "categoryDisplay": "Metodologías Ágiles",
     "tagClass": "tag-management",
