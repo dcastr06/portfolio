@@ -1,23 +1,12 @@
 [
   {
-    "category": "algoritmos",
-    "categoryDisplay": "Algoritmos",
-    "tagClass": "tag-code",
-    "asignatura": "TAIS",
-    "title": "Repositorio TAIS",
-    "type": "Ejercicios",
-    "date": "Marzo 2026",
-    "file": "https://github.com/dcastr06/TAIS-2025-",
-    "extension": "LINK"
-  },
-  {
     "category": "equipos",
     "categoryDisplay": "Metodologías Ágiles",
     "tagClass": "tag-management",
     "asignatura": "GPS",
     "title": "Versículos de un Scrum Master",
     "type": "Apuntes",
-    "date": "Nov 2025",
+    "date": "Mar 2026",
     "file": "pdfs/equipos/agiles/Versículos de un Scrum Master.pdf",
     "extension": "PDF"
   },
@@ -28,7 +17,7 @@
     "asignatura": "MS",
     "title": "La Biblia de Modelado de Software",
     "type": "Apuntes",
-    "date": "Nov 2025",
+    "date": "Mar 2026",
     "file": "pdfs/equipos/tradicionales/La Biblia de Modelado de Software.pdf",
     "extension": "PDF"
   },
@@ -39,7 +28,7 @@
     "asignatura": "IS2",
     "title": "La Biblia de IS2",
     "type": "Apuntes",
-    "date": "Nov 2025",
+    "date": "Mar 2026",
     "file": "pdfs/equipos/tradicionales/La Biblia de IS2.pdf",
     "extension": "PDF"
   },
@@ -50,7 +39,7 @@
     "asignatura": "IS1",
     "title": "La Biblia de IS1",
     "type": "Apuntes",
-    "date": "Nov 2025",
+    "date": "Mar 2026",
     "file": "pdfs/equipos/tradicionales/La Biblia de IS1.pdf",
     "extension": "PDF"
   },
@@ -59,9 +48,20 @@
     "categoryDisplay": "Algoritmos",
     "tagClass": "tag-code",
     "asignatura": "FAL",
+    "title": "Repositorio Algoritmos",
+    "type": "Ejercicios",
+    "date": "Mar 2026",
+    "file": "https://github.com/dcastr06/FAL-2024",
+    "extension": "LINK"
+  },
+  {
+    "category": "algoritmos",
+    "categoryDisplay": "Algoritmos",
+    "tagClass": "tag-code",
+    "asignatura": "FAL",
     "title": "Repositorio FAL",
     "type": "Ejercicios",
-    "date": "Nov 2025",
+    "date": "Mar 2026",
     "file": "https://github.com/dcastr06/FAL-2024",
     "extension": "LINK"
   },
@@ -72,7 +72,7 @@
     "asignatura": "TCGE",
     "title": "CFijos",
     "type": "Ejercicios",
-    "date": "Nov 2025",
+    "date": "Mar 2026",
     "file": "pdfs/empresas/TCGE/Fijos/CFijos.zip",
     "extension": "ZIP"
   },
@@ -83,7 +83,7 @@
     "asignatura": "TCGE",
     "title": "CVars",
     "type": "Ejercicios",
-    "date": "Nov 2025",
+    "date": "Mar 2026",
     "file": "pdfs/empresas/TCGE/Variables/CVars.zip",
     "extension": "ZIP"
   }
