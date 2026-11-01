@@ -151,17 +151,17 @@ img {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%);
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
     color: #ffffff;
-    border: 1px solid rgba(167, 139, 250, 0.4);
-    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
+    border: 1px solid rgba(224, 64, 251, 0.4);
+    box-shadow: 0 4px 18px rgba(180, 110, 254, 0.4);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
-    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.42);
-    border-color: rgba(196, 181, 253, 0.6);
+    background: linear-gradient(135deg, #c084fc, #b46efe);
+    box-shadow: 0 6px 24px rgba(180, 110, 254, 0.55);
+    border-color: rgba(224, 64, 251, 0.7);
 }
 
 .btn-secondary {
@@ -624,8 +624,8 @@ img {
     color: #e9d5ff;
     font-weight: 600;
     font-size: 0.88rem;
-    background: rgba(124, 58, 237, 0.2);
-    border: 1px solid rgba(168, 85, 247, 0.35);
+    background: rgba(180, 110, 254, 0.16);
+    border: 1px solid rgba(180, 110, 254, 0.35);
     padding: 7px 18px;
     border-radius: 30px;
     transition: all 0.25s ease;
@@ -634,11 +634,11 @@ img {
 }
 
 .card-link:hover {
-    background: #7c3aed;
-    border-color: #8b5cf6;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    border-color: rgba(224, 64, 251, 0.6);
     color: #fff;
     transform: translateX(4px);
-    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+    box-shadow: 0 4px 16px rgba(180, 110, 254, 0.4);
 }
 
 .link-arrow {

@@ -1,14 +1,16 @@
 [
     {
-        "title": "Sostenibilidad Digital",
-        "description": "Contribución a la Wikipedia traduciendo el artículo de Sostenibilidad Digital al español. El artículo expresa la importancia de que los recursos digitales generados hoy puedan seguir siendo útiles, accesibles y mejorables en el futuro.",
+        "title": "xTyphonTC (TFG) — Nota: 10",
+        "description": "Trabajo de fin de grado basado en el análisis y la investigación de vectores de ataque mediante código fragmentado en entornos Serverless. Realicé una Prueba de Concepto para demostrar que fragmentando el malware en distintas funciones de AWS Lambda, se podía inyectar código malicioso en un ordenador sorteando los métodos de protección convencionales.",
         "tags": [
-            "Wikipedia",
-            "Sostenibilidad Digital",
-            "Ética",
-            "Comunidad"
+            "TFG",
+            "Nota: 10",
+            "Ciberseguridad",
+            "AWS Lambda",
+            "Serverless",
+            "Malware"
         ],
-        "link": "https://es.wikipedia.org/wiki/Sostenibilidad_digital"
+        "link": "https://github.com/ri3car1do4/xTyphonTC"
     },
     {
         "title": "Taskmaster",
@@ -20,5 +22,16 @@
             "Gestión de Proyectos"
         ],
         "link": "https://github.com/t3sorero/TASKMASTER"
+    },
+    {
+        "title": "Sostenibilidad Digital",
+        "description": "Contribución a la Wikipedia traduciendo el artículo de Sostenibilidad Digital al español. El artículo expresa la importancia de que los recursos digitales generados hoy puedan seguir siendo útiles, accesibles y mejorables en el futuro.",
+        "tags": [
+            "Wikipedia",
+            "Sostenibilidad Digital",
+            "Ética",
+            "Comunidad"
+        ],
+        "link": "https://es.wikipedia.org/wiki/Sostenibilidad_digital"
     }
 ]
