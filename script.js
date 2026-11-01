@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="card-content">
                         <div class="card-top-meta">
                             <span class="card-cyber-badge">PROYECTO #${cardIndex}</span>
-                            <span class="card-status"><span class="status-dot"></span>ONLINE</span>
+                            <span class="card-status"><span class="status-dot"></span>FINALIZADO</span>
                         </div>
                         <h3 class="card-title">${project.title}</h3>
                         <p class="card-desc">${project.description}</p>
