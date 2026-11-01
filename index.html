@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>David Castro | Portfolio</title>
     <meta name="description"
-        content="Portfolio personal de David Castro. Estudiante interesado en Ciberseguridad, Normativa IT y Desarrollo.">
+        content="Portfolio personal de David Castro. Ingeniero de Software y Estudiante de Máster en Ciberseguridad (GRC).">
 
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -45,13 +45,18 @@
         <!-- 1. Hero Section -->
         <section id="hero" class="hero-section">
             <div class="container hero-content">
-                <h1 class="hero-title"><span id="typewriter"></span><span class="typewriter-cursor">|</span></h1>
-                <p class="hero-subtitle">Ingeniero de Software y Estudiante de Máster en Ciberseguridad</p>
+                <div class="terminal-badge">
+                    <span class="terminal-dot red"></span>
+                    <span class="terminal-dot yellow"></span>
+                    <span class="terminal-dot green"></span>
+                    <span class="terminal-text">user@security:~$ ./welcome.sh</span>
+                </div>
+                <h1 class="hero-title"><span id="typewriter"></span><span class="typewriter-cursor">▋</span></h1>
+                <p class="hero-subtitle">Ingeniero de Software y Estudiante de Máster en Ciberseguridad (GRC)</p>
                 <p class="hero-description">
                     Estudiante de Máster en Ciberseguridad apasionado por el GRC, la seguridad informática y la
                     protección de datos.
-                    <br>
-                    <br>
+                    <br><br>
                     Aprendiendo cada día para construir un entorno digital más seguro y justo para todos.
                 </p>
                 <div class="hero-buttons">
@@ -64,7 +69,7 @@
         <!-- 2. Sobre Mí / CV Section -->
         <section id="sobre-mi" class="section">
             <div class="container about-container">
-                <div class="about-content">
+                <div class="about-card">
                     <h2 class="section-title">Sobre Mí</h2>
                     <p class="about-text">
                         Soy David Castro, estudiante del Máster en Ciberseguridad en la Universidad de Alcalá con un
@@ -86,8 +91,8 @@
                     </p>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/david-castro-garc%C3%ADa-842158306/" class="social-link"
-                            target="_blank">LinkedIn</a>
-                        <a href="https://github.com/dcastr06" class="social-link" target="_blank">GitHub</a>
+                            target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://github.com/dcastr06" class="social-link" target="_blank" rel="noopener noreferrer">GitHub</a>
                     </div>
                     <a href="pdfs/cv/CVDavidCastroGarcia.pdf" class="btn btn-primary btn-large"
                         download="CVDavidCastroGarcia.pdf">Descargar CV (PDF)</a>
@@ -100,7 +105,7 @@
             <div class="container">
                 <h2 class="section-title">Proyectos Destacados</h2>
                 <div class="projects-grid" id="projects-container">
-                    <!-- Projects will be loaded dynamically -->
+                    <!-- Projects will be loaded dynamically via script.js -->
                 </div>
             </div>
         </section>
@@ -115,24 +120,30 @@
                 <div class="participation-grid">
                     <!-- Eventos e Instituciones -->
                     <article class="participation-card">
-                        <div class="participation-icon">🏛️</div>
+                        <div class="participation-header">
+                            <div class="participation-icon">🏛️</div>
+                            <span class="participation-date">Ediciones 2024 y 2025</span>
+                        </div>
                         <h3>Jornadas STIC CCN-CERT y ESPDEF-CERT</h3>
-                        <p class="participation-date">Ediciones 2024 y 2025</p>
                         <p>Asistencia a las jornadas donde se abordan temas clave de ciberdefensa, ciberinteligencia y resiliencia digital, con especial foco en GRC. Expertos del sector comparten nociones sobre normativas novedosas y de cumplimiento como NIS2 o el Esquema Nacional de Seguridad.</p>
                     </article>
 
                     <article class="participation-card">
-                        <div class="participation-icon">🌐</div>
+                        <div class="participation-header">
+                            <div class="participation-icon">🌐</div>
+                            <span class="participation-date">2026</span>
+                        </div>
                         <h3>Congreso Cibertodos ISACA 2026</h3>
-                        <p class="participation-date">2026</p>
                         <p>Asistencia a este congreso centrado en la evolución de la ciberseguridad en un mundo donde la IA y la criptografía postcuántica están cambiándolo todo.</p>
                     </article>
 
                     <!-- Competiciones CTF -->
                     <article class="participation-card">
-                        <div class="participation-icon">🚩</div>
+                        <div class="participation-header">
+                            <div class="participation-icon">🚩</div>
+                            <span class="participation-date">2025 – 2026</span>
+                        </div>
                         <h3>Competiciones CTF</h3>
-                        <p class="participation-date">2025 – 2026</p>
                         <ul class="participation-list">
                             <li>University CTF 2025 (HackTheBox)</li>
                             <li>Talent4Cyber 2026 — Mando Conjunto del Ciberespacio (MCCE)</li>
@@ -142,9 +153,11 @@
 
                     <!-- Programación Competitiva -->
                     <article class="participation-card">
-                        <div class="participation-icon">⚔️</div>
+                        <div class="participation-header">
+                            <div class="participation-icon">⚔️</div>
+                            <span class="participation-date">2024 – 2025</span>
+                        </div>
                         <h3>Programación Competitiva — Core War</h3>
-                        <p class="participation-date">2024 – 2025</p>
                         <ul class="participation-list">
                             <li>CorewarUCM 2024 — 4.º puesto a nivel nacional</li>
                             <li>Retro Computer Festival 2025, Cambridge — nivel internacional</li>
@@ -153,9 +166,11 @@
 
                     <!-- Grupos universitarios -->
                     <article class="participation-card">
-                        <div class="participation-icon">🎓</div>
+                        <div class="participation-header">
+                            <div class="participation-icon">🎓</div>
+                            <span class="participation-date">UCM / UAH</span>
+                        </div>
                         <h3>Grupos y Asociaciones Universitarias</h3>
-                        <p class="participation-date">Universidad Complutense / Universidad de Alcalá</p>
                         <ul class="participation-list">
                             <li>Grupo de Hacking de la facultad (FDIst)</li>
                             <li>Asociación LibreLab</li>

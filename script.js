@@ -1,39 +1,49 @@
-document.addEventListener('DOMContentLoaded', () => {
-
-    // ─── 1. Typewriter Terminal Effect ───
+// ─── 1. Typewriter Terminal Effect (Instant & Rock-solid) ───
+function initTypewriter() {
     const typewriterEl = document.getElementById('typewriter');
-    if (typewriterEl) {
-        const fullText = "¡Hola!, soy David";
-        const highlightWord = "David";
-        let charIndex = 0;
-        typewriterEl.innerHTML = '';
+    if (!typewriterEl || typewriterEl.dataset.typed === 'true') return;
+    typewriterEl.dataset.typed = 'true';
 
-        function typeKeystroke() {
-            if (charIndex <= fullText.length) {
-                const currentSub = fullText.substring(0, charIndex);
-                if (currentSub.includes(highlightWord)) {
-                    const prefix = currentSub.substring(0, currentSub.indexOf(highlightWord));
-                    const highlight = currentSub.substring(currentSub.indexOf(highlightWord));
-                    typewriterEl.innerHTML = `${prefix}<span class="text-gradient">${highlight}</span>`;
-                } else {
-                    typewriterEl.textContent = currentSub;
-                }
-                charIndex++;
-                // Natural typing cadence (variable between 65ms and 115ms)
-                const delay = Math.floor(Math.random() * 50) + 65;
-                setTimeout(typeKeystroke, delay);
+    const fullText = "¡Buenas!, soy David";
+    const highlightWord = "David";
+    let charIndex = 0;
+    typewriterEl.innerHTML = '';
+
+    function typeKeystroke() {
+        if (charIndex <= fullText.length) {
+            const currentSub = fullText.substring(0, charIndex);
+            if (currentSub.indexOf(highlightWord) !== -1) {
+                const prefix = currentSub.substring(0, currentSub.indexOf(highlightWord));
+                const highlight = currentSub.substring(currentSub.indexOf(highlightWord));
+                typewriterEl.innerHTML = `${prefix}<span class="text-gradient">${highlight}</span>`;
+            } else {
+                typewriterEl.textContent = currentSub;
             }
+            charIndex++;
+            // Natural typing cadence (between 60ms and 110ms)
+            const delay = Math.floor(Math.random() * 50) + 65;
+            setTimeout(typeKeystroke, delay);
         }
-        // Start typing after initial short delay
-        setTimeout(typeKeystroke, 400);
     }
 
+    setTimeout(typeKeystroke, 250);
+}
+
+// Ensure execution regardless of DOM state
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTypewriter);
+} else {
+    initTypewriter();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
     // ─── 2. Mobile Menu Functionality ───
     const mobileBtn = document.querySelector('.mobile-menu-btn');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
     function toggleMenu() {
+        if (!mobileBtn || !navMenu) return;
         mobileBtn.classList.toggle('active');
         navMenu.classList.toggle('active');
         document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
@@ -46,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close menu when clicking a link
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            if (navMenu.classList.contains('active')) {
+            if (navMenu && navMenu.classList.contains('active')) {
                 toggleMenu();
             }
         });
@@ -76,12 +86,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // ─── 4. Navbar Scroll Effect ───
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.boxShadow = '0 6px 25px rgba(180, 110, 254, 0.25)';
-            navbar.style.borderColor = 'rgba(180, 110, 254, 0.4)';
+        if (!navbar) return;
+        if (window.scrollY > 40) {
+            navbar.classList.add('scrolled');
         } else {
-            navbar.style.boxShadow = 'none';
-            navbar.style.borderColor = 'rgba(180, 110, 254, 0.2)';
+            navbar.classList.remove('scrolled');
         }
     });
 
@@ -108,7 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const cardIndex = String(index + 1).padStart(2, '0');
 
                 card.innerHTML = `
-                    <div class="card-glow-bar"></div>
                     <div class="card-content">
                         <div class="card-top-meta">
                             <span class="card-cyber-badge">PROYECTO #${cardIndex}</span>
@@ -145,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => {
             console.error('Error loading notes:', error);
             if (notesBody) {
-                notesBody.innerHTML = '<tr><td colspan="5" style="text-align:center;">Error cargando apuntes.</td></tr>';
+                notesBody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 25px;">Error cargando apuntes.</td></tr>';
             }
         });
 
@@ -175,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (note.extension === 'LINK') {
                 actionIcon = '🔗 GitHub';
                 targetAttr = 'target="_blank" rel="noopener noreferrer"';
-                downloadAttr = ''; // No download for links
+                downloadAttr = '';
             }
 
             row.innerHTML = `
@@ -186,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td><a href="${note.file}" class="btn-action-icon" aria-label="Abrir ${note.extension}" ${targetAttr} ${downloadAttr}>${actionIcon}</a></td>
             `;
 
-            row.style.animation = 'fadeIn 0.4s ease forwards';
+            row.style.animation = 'fadeIn 0.35s ease forwards';
             notesBody.appendChild(row);
         });
     }
