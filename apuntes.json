@@ -1,15 +1,5 @@
 [
   {
-    "category": "algoritmos",
-    "categoryDisplay": "Algoritmos",
-    "tagClass": "tag-code",
-    "asignatura": "TAIS",
-    "title": "Repositorio TAIS",
-    "type": "Ejercicios",
-    "file": "https://github.com/dcastr06/TAIS-2025-",
-    "extension": "LINK"
-  },
-  {
     "category": "equipos",
     "categoryDisplay": "Metodologías Ágiles",
     "tagClass": "tag-management",
@@ -48,6 +38,16 @@
     "type": "Apuntes",
     "file": "pdfs/equipos/tradicionales/La Biblia de IS1.pdf",
     "extension": "PDF"
+  },
+  {
+    "category": "algoritmos",
+    "categoryDisplay": "Algoritmos",
+    "tagClass": "tag-code",
+    "asignatura": "FAL",
+    "title": "Repositorio Algoritmos",
+    "type": "Ejercicios",
+    "file": "https://github.com/dcastr06/FAL-2024",
+    "extension": "LINK"
   },
   {
     "category": "algoritmos",
