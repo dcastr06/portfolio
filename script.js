@@ -1,5 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Menu Functionality
+
+    // ─── 1. Typewriter Terminal Effect ───
+    const typewriterEl = document.getElementById('typewriter');
+    if (typewriterEl) {
+        const fullText = "¡Hola!, soy David";
+        const highlightWord = "David";
+        let charIndex = 0;
+        typewriterEl.innerHTML = '';
+
+        function typeKeystroke() {
+            if (charIndex <= fullText.length) {
+                const currentSub = fullText.substring(0, charIndex);
+                if (currentSub.includes(highlightWord)) {
+                    const prefix = currentSub.substring(0, currentSub.indexOf(highlightWord));
+                    const highlight = currentSub.substring(currentSub.indexOf(highlightWord));
+                    typewriterEl.innerHTML = `${prefix}<span class="text-gradient">${highlight}</span>`;
+                } else {
+                    typewriterEl.textContent = currentSub;
+                }
+                charIndex++;
+                // Natural typing cadence (variable between 65ms and 115ms)
+                const delay = Math.floor(Math.random() * 50) + 65;
+                setTimeout(typeKeystroke, delay);
+            }
+        }
+        // Start typing after initial short delay
+        setTimeout(typeKeystroke, 400);
+    }
+
+    // ─── 2. Mobile Menu Functionality ───
     const mobileBtn = document.querySelector('.mobile-menu-btn');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -23,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Smooth Scroll for Anchor Links
+    // ─── 3. Smooth Scroll for Anchor Links ───
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -44,44 +73,56 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Navbar Scroll Effect
+    // ─── 4. Navbar Scroll Effect ───
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.4)';
+            navbar.style.boxShadow = '0 6px 25px rgba(180, 110, 254, 0.25)';
+            navbar.style.borderColor = 'rgba(180, 110, 254, 0.4)';
         } else {
             navbar.style.boxShadow = 'none';
+            navbar.style.borderColor = 'rgba(180, 110, 254, 0.2)';
         }
     });
 
-    // Load Projects (Dynamic)
+    // ─── 5. Load Projects (Dynamic with Audacious Card Design) ───
     fetch('proyectos.json')
         .then(response => response.json())
         .then(projects => {
             const projectsContainer = document.getElementById('projects-container');
             if (!projectsContainer) return;
 
-            projects.forEach(project => {
+            projects.forEach((project, index) => {
                 const card = document.createElement('article');
                 card.className = 'project-card';
 
                 // Create tags HTML
                 const tagsHtml = project.tags.map(tag => `<span class="tech-tag">${tag}</span>`).join('');
 
-                // Determine link text and icon
+                // Determine link text
                 let linkText = 'Ver en GitHub';
                 if (project.link.includes('wikipedia.org')) {
                     linkText = 'Ver en Wikipedia';
                 }
 
+                const cardIndex = String(index + 1).padStart(2, '0');
+
                 card.innerHTML = `
+                    <div class="card-glow-bar"></div>
                     <div class="card-content">
+                        <div class="card-top-meta">
+                            <span class="card-cyber-badge">PROYECTO #${cardIndex}</span>
+                            <span class="card-status"><span class="status-dot"></span>ONLINE</span>
+                        </div>
                         <h3 class="card-title">${project.title}</h3>
                         <p class="card-desc">${project.description}</p>
                         <div class="card-tags">
                             ${tagsHtml}
                         </div>
-                        <a href="${project.link}" class="card-link" target="_blank">${linkText} →</a>
+                        <a href="${project.link}" class="card-link" target="_blank" rel="noopener noreferrer">
+                            <span>${linkText}</span>
+                            <span class="link-arrow">→</span>
+                        </a>
                     </div>
                 `;
                 projectsContainer.appendChild(card);
@@ -89,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error('Error loading projects:', error));
 
-    // Apuntes Logic (Dynamic Loading & Filtering)
+    // ─── 6. Apuntes Logic (Dynamic Loading & Filtering) ───
     const tabBtns = document.querySelectorAll('.tab-btn');
     const notesBody = document.getElementById('notes-body');
     let allNotes = [];
@@ -117,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
             : allNotes.filter(note => note.category === filterCategory);
 
         if (filteredNotes.length === 0) {
-            notesBody.innerHTML = '<tr><td colspan="5" style="text-align:center; color: var(--text-muted);">No hay apuntes en esta categoría.</td></tr>';
+            notesBody.innerHTML = '<tr><td colspan="5" style="text-align:center; color: var(--text-muted); padding: 30px;">No hay apuntes en esta categoría.</td></tr>';
             return;
         }
 
@@ -139,14 +180,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             row.innerHTML = `
                 <td><span class="tag ${note.tagClass}">${note.categoryDisplay}</span></td>
-                <td>${note.asignatura}</td>
+                <td><strong class="subject-name">${note.asignatura}</strong></td>
                 <td>${note.title}</td>
                 <td><span class="badge-type">${note.type}</span></td>
-                <td><a href="${note.file}" class="btn-icon" aria-label="Abrir ${note.extension}" ${targetAttr} ${downloadAttr}>${actionIcon}</a></td>
+                <td><a href="${note.file}" class="btn-action-icon" aria-label="Abrir ${note.extension}" ${targetAttr} ${downloadAttr}>${actionIcon}</a></td>
             `;
 
-            // Animation
-            row.style.animation = 'fadeIn 0.5s ease forwards';
+            row.style.animation = 'fadeIn 0.4s ease forwards';
             notesBody.appendChild(row);
         });
     }
@@ -154,9 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Tab Click Event
     tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Remove active class from all buttons
             tabBtns.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
             btn.classList.add('active');
 
             const category = btn.getAttribute('data-tab');
@@ -169,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const styleSheet = document.createElement("style");
 styleSheet.innerText = `
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
 `;
